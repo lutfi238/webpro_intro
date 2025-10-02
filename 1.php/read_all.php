@@ -9,7 +9,7 @@ $result = $conn->query($sql);
 
 // if there are results
 if ($result->num_rows > 0) {
-
+    
     echo "<a href='form_input_product.php'>Add Product</a>";
     echo "<table border='bold'>
         <tr>
