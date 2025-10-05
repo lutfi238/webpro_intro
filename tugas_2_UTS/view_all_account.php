@@ -2,17 +2,21 @@
 // Read all
 include 'connect.php';
 
-// get id from url
-$id = isset($_GET['id']);
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
-
-echo "<h2>Users Account</h2>";
-echo "<a href='registration.php'>Add New User</a><br><br>";
+?>
+<html>
+<head>
+    <title>All User Accounts</title>
+</head>
+<body>
+    <h2>Users Account</h2>
+    <a href='index.php'>Home</a> | <a href='registration.php'>Add New User</a><br><br>
+<?php
 
 // if there are results
 if ($result->num_rows > 0) {
-    echo "<table border='bold'>
+    echo "<table border='1'>
         <tr>
             <th>ID</th>
             <th>Username</th>
@@ -39,3 +43,5 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+</body>
+</html>
