@@ -23,18 +23,19 @@ if ($result->num_rows > 0) {
     
     // Send OTP via email
     require 'vendor/autoload.php';
+    $emailConfig = require 'email_config.php';
     
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = $emailConfig['smtp_host'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'lutfifirdaus238@gmail.com'; // Your Gmail address
-        $mail->Password = 'vcrg bvws zevs mozm'; // Your Gmail App Password
+        $mail->Username = $emailConfig['smtp_username'];
+        $mail->Password = $emailConfig['smtp_password'];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+        $mail->Port = $emailConfig['smtp_port'];
         
-        $mail->setFrom('lutfifirdaus238@gmail.com', 'User Management System');
+        $mail->setFrom($emailConfig['from_email'], $emailConfig['from_name']);
         $mail->addAddress($usr);
         
         $mail->Subject = 'Password Reset OTP - User Management System';

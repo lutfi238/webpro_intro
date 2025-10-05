@@ -1,0 +1,15 @@
+<?php
+// Email Configuration
+// Copy this file to email_config.php and fill in your actual credentials
+// DO NOT commit email_config.php to GitHub
+
+return [
+    'smtp_host' => 'smtp.gmail.com',
+    'smtp_port' => 587,
+    'smtp_secure' => 'tls',
+    'smtp_username' => 'your-email@gmail.com',      // Change to your email
+    'smtp_password' => 'your-app-password-here',    // Change to your Gmail App Password
+    'from_email' => 'your-email@gmail.com',         // Change to your email
+    'from_name' => 'User Management System'
+];
+?>

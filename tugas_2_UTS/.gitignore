@@ -1,0 +1,21 @@
+# Ignore sensitive configuration files
+connect.php
+email_config.php
+
+# Ignore vendor directory (can be reinstalled via composer)
+vendor/
+
+# Ignore composer lock file
+composer.lock
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.log
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
